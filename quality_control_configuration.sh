@@ -31,16 +31,30 @@ echo "Enter the name of the SSID for the ath01 and ath11:"
 echo "!!!!!Do not use special characters (@$-;)"
 read ssid1
 #populating the signal-to-graylog.sh script
-echo "wlanconfig ath01 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 "/g' | nc" $server $port >> signal-to-graylog.sh
-echo "wlanconfig ath11 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 "/g' | nc" $server $port >> signal-to-graylog.sh
+dbm1=$(iwlist ath01 txpower | grep Tx | cut -b 28-29)
+dbm11=$(iwlist ath11 txpower | grep Tx | cut -b 28-29)
+echo "wlanconfig ath01 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 Tx_Power=$dbm1 "/g' | nc" $server $port >> signal-to-graylog.sh
+echo "wlanconfig ath11 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 Tx_Power=$dbm11 "/g' | nc" $server $port >> signal-to-graylog.sh
 }
 function ssid2() {
 echo "Enter the name of the SSID for the ath02 and ath12:"
 echo "!!!!!Do not use special characters (@$-;)"
 read ssid2
 #populating the signal-to-graylog.sh script
-echo "wlanconfig ath02 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid2 "/g' | nc" $server $port >> signal-to-graylog.sh
-echo "wlanconfig ath12 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid2 "/g' | nc" $server $port >> signal-to-graylog.sh
+dbm2=$(iwlist ath02 txpower | grep Tx | cut -b 28-29)
+dbm12=$(iwlist ath12 txpower | grep Tx | cut -b 28-29)
+echo "wlanconfig ath02 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid2 Tx_Power=$dbm2 "/g' | nc" $server $port >> signal-to-graylog.sh
+echo "wlanconfig ath12 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid2 Tx_Power=$dbm12"/g' | nc" $server $port >> signal-to-graylog.sh
+}
+function ssid3() {
+echo "Enter the name of the SSID for the ath03 and ath13:"
+echo "!!!!!Do not use special characters (@$-;)"
+read ssid3
+#populating the signal-to-graylog.sh script
+dbm3=$(iwlist ath03 txpower | grep Tx | cut -b 28-29)
+dbm13=$(iwlist ath13 txpower | grep Tx | cut -b 28-29)
+echo "wlanconfig ath03 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid3 Tx_Power=$dbm3 "/g' | nc" $server $port >> signal-to-graylog.sh
+echo "wlanconfig ath13 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid3 Tx_Power=$dbm13 "/g' | nc" $server $port >> signal-to-graylog.sh
 }
 function port_monitor() {
 echo "Adding the commands into the speed.sh to monitor the port statistics"
@@ -121,6 +135,17 @@ read answer
 if [ $answer -eq 1 ]
 then 
 	ssid2
+elif [ $answer -eq 2 ]
+then
+	echo "finishing the script"
+else
+	echo "finishing the script"
+fi
+echo " Would you like to monitor ath03 and ath13? 1=yes, 2=no"
+read answer
+if [ $answer -eq 1 ]
+then 
+	ssid3
 elif [ $answer -eq 2 ]
 then
 	echo "finishing the script"
