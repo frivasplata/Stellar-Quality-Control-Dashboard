@@ -1,10 +1,10 @@
 {
   "v": "1",
   "id": "d8d99662-9958-444a-8dda-1bd322129216",
-  "rev": 3,
+  "rev": 4,
   "name": "Stellar APs Quality Control",
   "summary": "Stellar APs Quality Control",
-  "description": "Added Tx Power monitor",
+  "description": "Removed Tx Power monitor",
   "vendor": "Fernando Rivasplata",
   "url": "",
   "parameters": [],
