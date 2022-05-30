@@ -1,1 +1,4175 @@
-{"id":"d8d99662-9958-444a-8dda-1bd322129216","rev":2,"v":"1","name":"Stellar APs Quality Control","summary":"Stellar APs Quality Control","description":"","vendor":"Fernando Rivasplata","url":"","created_at":"2022-05-23T20:04:45.926Z","server_version":"4.3.0+7c09aad","parameters":[],"entities":[{"id":"f59eec9a-9b81-4bf3-b849-ebae18db6b38","type":{"name":"dashboard","version":"2"},"v":"1","data":{"summary":{"@type":"string","@value":""},"search":{"queries":[{"id":"cc3978f9-11f1-4656-a955-c65fbea27b42","timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"search_types":[{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"count(Sig_to_Noise)","field":"Sig_to_Noise"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"Sig_to_Noise","limit":64}],"type":"pivot","id":"51157a80-9a09-49a7-83ed-1609142fb12a","column_groups":[],"sort":[{"type":"pivot","field":"Sig_to_Noise","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"count(SSID)","field":"SSID"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"SSID","limit":15}],"type":"pivot","id":"a37f3b2e-5253-404f-bd61-ad2d187807ae","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"avg","id":"SNR","field":"Client_to_AP_Rate"}],"filter":null,"rollup":true,"row_groups":[{"type":"time","field":"timestamp","interval":{"type":"timeunit","timeunit":"1m"}},{"type":"values","field":"Client_to_AP_Rate","limit":64}],"type":"pivot","id":"ea69c83f-e5f9-44fd-bb65-df3f0a19690e","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"max","id":"max(Ch_Util)","field":"Ch_Util"}],"filter":null,"rollup":false,"row_groups":[{"type":"values","field":"Channel","limit":15}],"type":"pivot","id":"782b6b23-aed9-46ee-9064-0a0fc0909639","column_groups":[{"type":"values","field":"Ch_Util","limit":15}],"sort":[{"type":"series","field":"max(Ch_Util)","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"avg","id":"RSSI","field":"RSSI"}],"filter":null,"rollup":true,"row_groups":[{"type":"time","field":"timestamp","interval":{"type":"timeunit","timeunit":"1m"}},{"type":"values","field":"RSSI","limit":64}],"type":"pivot","id":"eee6652b-7b63-4291-af1b-d77108da3cf4","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":"RSSI:<=-78"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"MAC","limit":15},{"type":"values","field":"RSSI","limit":15}],"type":"pivot","id":"125bb9a0-8c4c-48f6-82cb-b1bd99248085","column_groups":[],"sort":[{"type":"pivot","field":"RSSI","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"RX","field":"Client_to_AP_Rate"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"Client_to_AP_Rate","limit":64}],"type":"pivot","id":"8b45c89e-3d31-44da-9b2c-fb4ff17f35be","column_groups":[],"sort":[{"type":"pivot","field":"Client_to_AP_Rate","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"MAC","limit":64},{"type":"values","field":"WIFI4","limit":64},{"type":"values","field":"WIFI5","limit":64},{"type":"values","field":"MU","limit":64}],"type":"pivot","id":"41da0d23-1231-4617-8d6b-823a53f49e32","column_groups":[],"sort":[{"type":"pivot","field":"MAC","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"count(AP_Identification)","field":"AP_Identification"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_Identification","limit":15}],"type":"pivot","id":"a1fb5ac9-455a-4303-a947-f9803be1fc1d","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"avg","id":"SNR","field":"Sig_to_Noise"}],"filter":null,"rollup":true,"row_groups":[{"type":"time","field":"timestamp","interval":{"type":"auto","scaling":1}},{"type":"values","field":"Sig_to_Noise","limit":64}],"type":"pivot","id":"c1d10899-da53-45f7-948c-21b8e8548277","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"count(Channel)","field":"Channel"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"Channel","limit":15}],"type":"pivot","id":"58b6d046-c8ed-45a6-bf40-1ded08b95384","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"Tx-Data Rate","field":"AP_to_Client_Rate"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_to_Client_Rate","limit":64}],"type":"pivot","id":"a8293494-2d57-4819-b08d-bc07e33bfb7f","column_groups":[],"sort":[{"type":"pivot","field":"AP_to_Client_Rate","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"avg","id":"SNR","field":"AP_to_Client_Rate"}],"filter":null,"rollup":true,"row_groups":[{"type":"time","field":"timestamp","interval":{"type":"timeunit","timeunit":"1m"}},{"type":"values","field":"AP_to_Client_Rate","limit":64}],"type":"pivot","id":"10a39cba-1f52-45d1-bd76-05e20944852c","column_groups":[],"sort":[]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[],"filter":null,"rollup":true,"row_groups":[{"type":"time","field":"timestamp","interval":{"type":"auto","scaling":1}},{"type":"values","field":"MAC","limit":64},{"type":"values","field":"RSSI","limit":64},{"type":"values","field":"Sig_to_Noise","limit":64},{"type":"values","field":"AP_to_Client_Rate","limit":64},{"type":"values","field":"Client_to_AP_Rate","limit":64},{"type":"values","field":"Channel","limit":64},{"type":"values","field":"AP_Identification","limit":64},{"type":"values","field":"SSID","limit":64}],"type":"pivot","id":"0f7259e7-9ba0-4a54-a681-633bd7582a20","column_groups":[],"sort":[{"type":"pivot","field":"timestamp","direction":"Descending"},{"type":"pivot","field":"RSSI","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"count","id":"RSSI","field":"RSSI"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"RSSI","limit":64}],"type":"pivot","id":"0f3cd52f-9d30-49b4-8765-839f45684930","column_groups":[],"sort":[{"type":"pivot","field":"RSSI","direction":"Descending"}]}]},{"id":"1b00568b-f177-4a98-819c-6ead320eb1d4","timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"search_types":[{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"max","id":"(TX-Multicast-packets)","field":"TX_Mcast_packets"},{"type":"max","id":"(RX-Multicast-packets)","field":"RX_Mcast_packets"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_Identification","limit":15},{"type":"values","field":"Adapter","limit":15}],"type":"pivot","id":"37bcb315-cacb-4476-acc4-0dc370bf4e49","column_groups":[],"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"max","id":"(TX)","field":"TX_Bytes_sec"},{"type":"max","id":"(RX)","field":"RX_Bytes_sec"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_Identification","limit":15},{"type":"values","field":"Adapter","limit":15}],"type":"pivot","id":"57a0216e-64e2-4290-a757-7e535760f779","column_groups":[],"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"max","id":"(TX-Error-packets)","field":"TX_Err_Packets"},{"type":"max","id":"(RX-Error-packets)","field":"RX_Err_packets"},{"type":"max","id":"(TX-Drops-packets)","field":"TX_Drops_packets"},{"type":"max","id":"(RX-Drops-packets)","field":"RX_Drops_packets"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_Identification","limit":15},{"type":"values","field":"Adapter","limit":15}],"type":"pivot","id":"453cb478-0736-4081-a2d5-b45400e3ed44","column_groups":[],"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]},{"query":{"type":"elasticsearch","query_string":""},"name":"chart","timerange":{"type":"relative","from":300},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"series":[{"type":"max","id":"(CPU-Free-%)","field":"CPU_free"},{"type":"max","id":"(Memory-Free-Mb))","field":"Memory_free"},{"type":"max","id":"(CPU-Temp-Celsius)","field":"CPU_temperature"}],"filter":null,"rollup":true,"row_groups":[{"type":"values","field":"AP_Identification","limit":15}],"type":"pivot","id":"07bfac94-f099-49e9-a078-f4b6a32eccb6","column_groups":[],"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]}]}],"parameters":[],"requires":{},"owner":"admin","created_at":"2022-05-22T00:50:45.838Z"},"created_at":"2022-02-28T17:17:01.125Z","requires":{},"state":{"cc3978f9-11f1-4656-a955-c65fbea27b42":{"selected_fields":null,"static_message_list_id":null,"titles":{"tab":{"title":"Boca Signal by Fernando Rivasplata"},"widget":{"6d64d928-038c-47f5-9942-12aa014d68ab":"Client(s) SNR evolution (dB)","45149de7-47ce-401f-a57b-d777da321975":"AP(s) to Client(s) Data-Rate (Mbps)","32a2135c-5af5-4d4c-8823-57bc1f836daa":"Access Points Occupation","3768fa9b-4196-4eb7-9712-86870bb36e89":"# of Clients","9988fa75-7d18-4dd3-a8bf-29b24cd93678":"SSID Connections/Disconnections occurrences","ca63f126-557d-44f2-b3ad-cba33a00b875":"SSID Occupation","f5bc4e25-2c03-4346-b75b-2b8a7fe3b3c7":"Client(s) RSSI (dBm) (copy)","0e8e2d46-1067-4cf6-911b-87af59a9919a":"Clients MAC's","cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6":"Client(s) RSSI evolution (dBm) ","30f645af-1ec0-433c-9bc3-1f7febf606b1":"Client(s) RSSI (dBm)","c6d15920-1751-42c3-8f92-199b3330c606":"Channel Occupation (%)","892ff942-4ff4-45c4-b251-04760d7cfcad":"Quality Status Summary (Green=Excellent, Gray=Good to Acceptable, Red= No good))","1cd1a94a-503d-4f46-a2ff-c9414aac5af0":"Client(s) SNR (db)","fa8c2620-4801-412f-9da6-ba8645d539d0":"Channel Utilization  - Airtime utilization (%)","73780579-2b47-4efb-a05d-855ae4c4245d":"AP to Client Data Rate evolution (Mbps)","6ec8f66b-0348-4473-9b58-3c339ceea07b":"Client(s) to AP(s) Data-Rate (Mbps)","2624f4e4-441e-4d16-a539-1eb7d9615cf2":"Poor signal <=-78dBm","429a4a34-9d2f-4394-a5b1-ba4c280afb5e":"Client(s) list & Capabilities","9dea7b87-2fad-4f22-b295-93dc3cf7ba38":"Client to AP Data Rate evolution (Mbps) "}},"widgets":[{"id":"6ec8f66b-0348-4473-9b58-3c339ceea07b","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"Client_to_AP_Rate","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"RX"},"function":"count(Client_to_AP_Rate)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":{"chart_colors":[{"field_name":"1","chart_color":"#b71c1c"},{"field_name":"2","chart_color":"#b71c1c"}]},"sort":[{"type":"pivot","field":"Client_to_AP_Rate","direction":"Ascending"}]}},{"id":"9dea7b87-2fad-4f22-b295-93dc3cf7ba38","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"line","event_annotation":false,"row_pivots":[{"field":"timestamp","type":"time","config":{"interval":{"type":"timeunit","value":1,"unit":"minutes"}}},{"field":"Client_to_AP_Rate","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"SNR"},"function":"avg(Client_to_AP_Rate)"}],"rollup":true,"column_pivots":[],"visualization_config":{"interpolation":"linear"},"formatting_settings":null,"sort":[]}},{"id":"cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"line","event_annotation":false,"row_pivots":[{"field":"timestamp","type":"time","config":{"interval":{"type":"timeunit","value":1,"unit":"minutes"}}},{"field":"RSSI","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"RSSI"},"function":"avg(RSSI)"}],"rollup":true,"column_pivots":[],"visualization_config":{"interpolation":"linear"},"formatting_settings":null,"sort":[]}},{"id":"2624f4e4-441e-4d16-a539-1eb7d9615cf2","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"RSSI:<=-78"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"table","event_annotation":false,"row_pivots":[{"field":"MAC","type":"values","config":{"limit":15}},{"field":"RSSI","type":"values","config":{"limit":15}}],"series":[],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[{"type":"pivot","field":"RSSI","direction":"Ascending"}]}},{"id":"45149de7-47ce-401f-a57b-d777da321975","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"AP_to_Client_Rate","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"Tx-Data Rate"},"function":"count(AP_to_Client_Rate)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":{"chart_colors":[{"field_name":"864","chart_color":"#006064"}]},"sort":[{"type":"pivot","field":"AP_to_Client_Rate","direction":"Ascending"}]}},{"id":"32a2135c-5af5-4d4c-8823-57bc1f836daa","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"AP_Identification","type":"values","config":{"limit":15}}],"series":[{"config":{"name":null},"function":"count(AP_Identification)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[]}},{"id":"892ff942-4ff4-45c4-b251-04760d7cfcad","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"table","event_annotation":false,"row_pivots":[{"field":"timestamp","type":"time","config":{"interval":{"type":"auto","scaling":1}}},{"field":"MAC","type":"values","config":{"limit":64}},{"field":"RSSI","type":"values","config":{"limit":64}},{"field":"Sig_to_Noise","type":"values","config":{"limit":64}},{"field":"AP_to_Client_Rate","type":"values","config":{"limit":64}},{"field":"Client_to_AP_Rate","type":"values","config":{"limit":64}},{"field":"Channel","type":"values","config":{"limit":64}},{"field":"AP_Identification","type":"values","config":{"limit":64}},{"field":"SSID","type":"values","config":{"limit":64}}],"series":[],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[{"type":"pivot","field":"timestamp","direction":"Descending"},{"type":"pivot","field":"RSSI","direction":"Ascending"}]}},{"id":"429a4a34-9d2f-4394-a5b1-ba4c280afb5e","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"table","event_annotation":false,"row_pivots":[{"field":"MAC","type":"values","config":{"limit":64}},{"field":"WIFI4","type":"values","config":{"limit":64}},{"field":"WIFI5","type":"values","config":{"limit":64}},{"field":"MU","type":"values","config":{"limit":64}}],"series":[],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[{"type":"pivot","field":"MAC","direction":"Ascending"}]}},{"id":"73780579-2b47-4efb-a05d-855ae4c4245d","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"line","event_annotation":false,"row_pivots":[{"field":"timestamp","type":"time","config":{"interval":{"type":"timeunit","value":1,"unit":"minutes"}}},{"field":"AP_to_Client_Rate","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"SNR"},"function":"avg(AP_to_Client_Rate)"}],"rollup":true,"column_pivots":[],"visualization_config":{"interpolation":"linear"},"formatting_settings":null,"sort":[]}},{"id":"ca63f126-557d-44f2-b3ad-cba33a00b875","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"SSID","type":"values","config":{"limit":15}}],"series":[{"config":{"name":null},"function":"count(SSID)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[]}},{"id":"30f645af-1ec0-433c-9bc3-1f7febf606b1","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"RSSI","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"RSSI"},"function":"count(RSSI)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[{"type":"pivot","field":"RSSI","direction":"Descending"}]}},{"id":"1cd1a94a-503d-4f46-a2ff-c9414aac5af0","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"Sig_to_Noise","type":"values","config":{"limit":64}}],"series":[{"config":{"name":null},"function":"count(Sig_to_Noise)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[{"type":"pivot","field":"Sig_to_Noise","direction":"Ascending"}]}},{"id":"c6d15920-1751-42c3-8f92-199b3330c606","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"pie","event_annotation":false,"row_pivots":[{"field":"Channel","type":"values","config":{"limit":15}}],"series":[{"config":{"name":null},"function":"count(Channel)"}],"rollup":true,"column_pivots":[],"visualization_config":null,"formatting_settings":null,"sort":[]}},{"id":"6d64d928-038c-47f5-9942-12aa014d68ab","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":"IEEE80211_MODE*"},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"line","event_annotation":false,"row_pivots":[{"field":"timestamp","type":"time","config":{"interval":{"type":"auto","scaling":1}}},{"field":"Sig_to_Noise","type":"values","config":{"limit":64}}],"series":[{"config":{"name":"SNR"},"function":"avg(Sig_to_Noise)"}],"rollup":true,"column_pivots":[],"visualization_config":{"interpolation":"linear"},"formatting_settings":null,"sort":[]}},{"id":"fa8c2620-4801-412f-9da6-ba8645d539d0","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"bar","event_annotation":false,"row_pivots":[{"field":"Channel","type":"values","config":{"limit":15}}],"series":[{"config":{"name":null},"function":"max(Ch_Util)"}],"rollup":false,"column_pivots":[{"field":"Ch_Util","type":"values","config":{"limit":15}}],"visualization_config":{"barmode":"overlay"},"formatting_settings":null,"sort":[{"type":"series","field":"max(Ch_Util)","direction":"Ascending"}]}}],"widget_mapping":{"6d64d928-038c-47f5-9942-12aa014d68ab":["c1d10899-da53-45f7-948c-21b8e8548277"],"45149de7-47ce-401f-a57b-d777da321975":["a8293494-2d57-4819-b08d-bc07e33bfb7f"],"32a2135c-5af5-4d4c-8823-57bc1f836daa":["a1fb5ac9-455a-4303-a947-f9803be1fc1d"],"ca63f126-557d-44f2-b3ad-cba33a00b875":["a37f3b2e-5253-404f-bd61-ad2d187807ae"],"cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6":["eee6652b-7b63-4291-af1b-d77108da3cf4"],"30f645af-1ec0-433c-9bc3-1f7febf606b1":["0f3cd52f-9d30-49b4-8765-839f45684930"],"c6d15920-1751-42c3-8f92-199b3330c606":["58b6d046-c8ed-45a6-bf40-1ded08b95384"],"892ff942-4ff4-45c4-b251-04760d7cfcad":["0f7259e7-9ba0-4a54-a681-633bd7582a20"],"1cd1a94a-503d-4f46-a2ff-c9414aac5af0":["51157a80-9a09-49a7-83ed-1609142fb12a"],"fa8c2620-4801-412f-9da6-ba8645d539d0":["782b6b23-aed9-46ee-9064-0a0fc0909639"],"73780579-2b47-4efb-a05d-855ae4c4245d":["10a39cba-1f52-45d1-bd76-05e20944852c"],"6ec8f66b-0348-4473-9b58-3c339ceea07b":["8b45c89e-3d31-44da-9b2c-fb4ff17f35be"],"2624f4e4-441e-4d16-a539-1eb7d9615cf2":["125bb9a0-8c4c-48f6-82cb-b1bd99248085"],"429a4a34-9d2f-4394-a5b1-ba4c280afb5e":["41da0d23-1231-4617-8d6b-823a53f49e32"],"9dea7b87-2fad-4f22-b295-93dc3cf7ba38":["ea69c83f-e5f9-44fd-bb65-df3f0a19690e"]},"positions":{"6d64d928-038c-47f5-9942-12aa014d68ab":{"col":9,"row":8,"height":4,"width":4},"45149de7-47ce-401f-a57b-d777da321975":{"col":5,"row":12,"height":4,"width":4},"32a2135c-5af5-4d4c-8823-57bc1f836daa":{"col":7,"row":20,"height":4,"width":3},"ca63f126-557d-44f2-b3ad-cba33a00b875":{"col":10,"row":20,"height":4,"width":3},"cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6":{"col":9,"row":4,"height":4,"width":4},"30f645af-1ec0-433c-9bc3-1f7febf606b1":{"col":5,"row":4,"height":4,"width":4},"c6d15920-1751-42c3-8f92-199b3330c606":{"col":1,"row":20,"height":4,"width":3},"892ff942-4ff4-45c4-b251-04760d7cfcad":{"col":1,"row":2,"height":2,"width":9},"1cd1a94a-503d-4f46-a2ff-c9414aac5af0":{"col":5,"row":8,"height":4,"width":4},"fa8c2620-4801-412f-9da6-ba8645d539d0":{"col":4,"row":20,"height":4,"width":3},"73780579-2b47-4efb-a05d-855ae4c4245d":{"col":9,"row":12,"height":4,"width":4},"6ec8f66b-0348-4473-9b58-3c339ceea07b":{"col":5,"row":16,"height":4,"width":4},"2624f4e4-441e-4d16-a539-1eb7d9615cf2":{"col":10,"row":2,"height":2,"width":3},"429a4a34-9d2f-4394-a5b1-ba4c280afb5e":{"col":1,"row":4,"height":16,"width":4},"9dea7b87-2fad-4f22-b295-93dc3cf7ba38":{"col":9,"row":16,"height":4,"width":4}},"formatting":{"highlighting":[{"field":"Client_to_AP_Rate","value":"144","color":{"color":"#7beeab","type":"static"},"condition":"greater"},{"field":"RSSI","value":"-75","color":{"color":"#ff0000","type":"static"},"condition":"less"},{"field":"Sig_to_Noise","value":"30","color":{"color":"#7beeab","type":"static"},"condition":"greater_equal"},{"field":"Sig_to_Noise","value":"20","color":{"color":"#ff006c","type":"static"},"condition":"less"},{"field":"AP_to_Client_Rate","value":"12","color":{"color":"#ff0000","type":"static"},"condition":"less_equal"},{"field":"RSSI","value":"-60","color":{"color":"#7beeab","type":"static"},"condition":"greater"},{"field":"Client_to_AP_Rate","value":"6","color":{"color":"#ff0000","type":"static"},"condition":"less"},{"field":"Ch_Util","value":"70","color":{"color":"#ff0000","type":"static"},"condition":"greater_equal"},{"field":"AP_to_Client_Rate","value":"220","color":{"color":"#7beeab","type":"static"},"condition":"greater_equal"},{"field":"Sig_to_Noise","value":"19","color":{"color":"#ff0000","type":"static"},"condition":"less_equal"}]},"display_mode_settings":{"positions":{}}},"1b00568b-f177-4a98-819c-6ead320eb1d4":{"selected_fields":null,"static_message_list_id":null,"titles":{"widget":{"c9e1cf7b-f028-4979-b5a5-a1e633848555":"AP Utilization (TX/RX) by Bps - Bytes per second","e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d":"AP TX/RX Errors/Drops - (pps - Packets per second) ","961fc773-934a-4b5e-8a5d-d10e8176409a":"AP Multicast TX/RX utilization by pps - Packets per second","undefined":"AP TX/RX Drops (pps - Packets per second) ","ce1d6e24-b33e-4da8-a969-326bf74d284a":"CPU available in % and Memory Available in Mb"},"tab":{"title":"AP Utilization, Multicast & Errors"}},"widgets":[{"id":"ce1d6e24-b33e-4da8-a969-326bf74d284a","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"bar","event_annotation":false,"row_pivots":[{"field":"AP_Identification","type":"values","config":{"limit":15}}],"series":[{"config":{"name":"(CPU-Free-%)"},"function":"max(CPU_free)"},{"config":{"name":"(Memory-Free-Mb))"},"function":"max(Memory_free)"},{"config":{"name":"(CPU-Temp-Celsius)"},"function":"max(CPU_temperature)"}],"rollup":true,"column_pivots":[],"visualization_config":{"barmode":"stack"},"formatting_settings":null,"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]}},{"id":"e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"bar","event_annotation":false,"row_pivots":[{"field":"AP_Identification","type":"values","config":{"limit":15}},{"field":"Adapter","type":"values","config":{"limit":15}}],"series":[{"config":{"name":"(TX-Error-packets)"},"function":"max(TX_Err_Packets)"},{"config":{"name":"(RX-Error-packets)"},"function":"max(RX_Err_packets)"},{"config":{"name":"(TX-Drops-packets)"},"function":"max(TX_Drops_packets)"},{"config":{"name":"(RX-Drops-packets)"},"function":"max(RX_Drops_packets)"}],"rollup":true,"column_pivots":[],"visualization_config":{"barmode":"stack"},"formatting_settings":null,"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]}},{"id":"c9e1cf7b-f028-4979-b5a5-a1e633848555","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"bar","event_annotation":false,"row_pivots":[{"field":"AP_Identification","type":"values","config":{"limit":15}},{"field":"Adapter","type":"values","config":{"limit":15}}],"series":[{"config":{"name":"(TX)"},"function":"max(TX_Bytes_sec)"},{"config":{"name":"(RX)"},"function":"max(RX_Bytes_sec)"}],"rollup":true,"column_pivots":[],"visualization_config":{"barmode":"stack"},"formatting_settings":null,"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]}},{"id":"961fc773-934a-4b5e-8a5d-d10e8176409a","type":"aggregation","filter":null,"timerange":{"type":"relative","from":300},"query":{"type":"elasticsearch","query_string":""},"streams":["2719ab14-e0ff-4784-ba45-0ed4ec8a5899"],"config":{"visualization":"bar","event_annotation":false,"row_pivots":[{"field":"AP_Identification","type":"values","config":{"limit":15}},{"field":"Adapter","type":"values","config":{"limit":15}}],"series":[{"config":{"name":"(TX-Multicast-packets)"},"function":"max(TX_Mcast_packets)"},{"config":{"name":"(RX-Multicast-packets)"},"function":"max(RX_Mcast_packets)"}],"rollup":true,"column_pivots":[],"visualization_config":{"barmode":"stack"},"formatting_settings":null,"sort":[{"type":"pivot","field":"AP_Identification","direction":"Ascending"}]}}],"widget_mapping":{"e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d":["453cb478-0736-4081-a2d5-b45400e3ed44"],"ce1d6e24-b33e-4da8-a969-326bf74d284a":["07bfac94-f099-49e9-a078-f4b6a32eccb6"],"961fc773-934a-4b5e-8a5d-d10e8176409a":["37bcb315-cacb-4476-acc4-0dc370bf4e49"],"c9e1cf7b-f028-4979-b5a5-a1e633848555":["57a0216e-64e2-4290-a757-7e535760f779"]},"positions":{"c9e1cf7b-f028-4979-b5a5-a1e633848555":{"col":1,"row":10,"height":3,"width":6},"e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d":{"col":1,"row":13,"height":3,"width":6},"ce1d6e24-b33e-4da8-a969-326bf74d284a":{"col":7,"row":13,"height":3,"width":6},"961fc773-934a-4b5e-8a5d-d10e8176409a":{"col":7,"row":10,"height":3,"width":6}},"formatting":{"highlighting":[]},"display_mode_settings":{"positions":{}}}},"properties":[],"owner":"admin","title":{"@type":"string","@value":"Stellar Signal Boca Raton"},"type":"DASHBOARD","description":{"@type":"string","@value":""}},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"7e0f6331-e529-4c90-8593-c20040c2cd96","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"TIMESTAMP_ISO8601","pattern":"%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"9735050f-b635-4fb4-b295-8bf2c441e918","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"YEAR","pattern":"(?>\\d\\d){1,2}"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"c161c1cc-3beb-48aa-a6ca-e70d2640cf4c","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MONTHNUM","pattern":"(?:0?[1-9]|1[0-2])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"a47337d7-ed96-46be-b162-758f4683e8eb","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"HOUR","pattern":"(?:2[0123]|[01]?[0-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"8c7ee9a7-e951-4268-8c66-ef0026a99977","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MINUTE","pattern":"(?:[0-5][0-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"504ed537-4583-4b68-b2c2-e2febc49d98d","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"SECOND","pattern":"(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"4c02843c-1f09-470b-b2ad-842be278b306","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"ISO8601_TIMEZONE","pattern":"(?:Z|[+-]%{HOUR}(?::?%{MINUTE}))"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"38150950-9b62-4e46-bd0e-42c69378f3eb","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MONTHDAY","pattern":"(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"82a14a74-0a04-4c55-9c6f-a6a428f7b2c2","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"TIMESTAMP_ISO8601","pattern":"%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"40e4c4b8-7024-43a3-bf0a-f67758e2339b","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"YEAR","pattern":"(?>\\d\\d){1,2}"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"a289c5f6-cdae-49a6-997f-f84dd30bf61c","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MONTHNUM","pattern":"(?:0?[1-9]|1[0-2])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"7c15bf92-cb04-4f11-8b00-69e26216c053","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"HOUR","pattern":"(?:2[0123]|[01]?[0-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"ccfecb3a-8337-417a-977a-a83838aa77b6","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MINUTE","pattern":"(?:[0-5][0-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"23f742c1-6e0b-470f-8715-dbf66595ce2e","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"SECOND","pattern":"(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"fa200193-376c-4847-9c39-b88e11fb4ca3","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"ISO8601_TIMEZONE","pattern":"(?:Z|[+-]%{HOUR}(?::?%{MINUTE}))"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"248c64bf-8456-444d-9ff5-7daac321eabb","type":{"name":"grok_pattern","version":"1"},"v":"1","data":{"name":"MONTHDAY","pattern":"(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])"},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"d50be85f-f285-4393-b03e-8b5883c4fed6","type":{"name":"input","version":"1"},"v":"1","data":{"title":{"@type":"string","@value":"Stellar_local"},"configuration":{"tls_key_file":{"@type":"string","@value":""},"port":{"@type":"integer","@value":5555},"tls_enable":{"@type":"boolean","@value":false},"use_null_delimiter":{"@type":"boolean","@value":false},"recv_buffer_size":{"@type":"integer","@value":1048576},"tcp_keepalive":{"@type":"boolean","@value":false},"tls_client_auth_cert_file":{"@type":"string","@value":""},"bind_address":{"@type":"string","@value":"0.0.0.0"},"tls_cert_file":{"@type":"string","@value":""},"max_message_size":{"@type":"integer","@value":2097152},"tls_client_auth":{"@type":"string","@value":"disabled"},"number_worker_threads":{"@type":"integer","@value":4},"tls_key_password":{"@type":"string","@value":""}},"static_fields":{},"type":{"@type":"string","@value":"org.graylog2.inputs.raw.tcp.RawTCPInput"},"global":{"@type":"boolean","@value":false},"extractors":[{"target_field":{"@type":"string","@value":"Sig_to_Noise"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":8},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"\\sSNR\\s*:\\s(\\d\\d)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Signal-to-Noise"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"MU"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":7},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\sMU capable\\s*:\\s(\\w)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Multi-User"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"WIFI5"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":6},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"[V]\\w\\w\\sCapability\\s*:\\s(\\w)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"WIFI5"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"Ch_Util"},"condition_value":{"@type":"string","@value":"bandmonCmnDetermineOperatingRegion:"},"order":{"@type":"integer","@value":9},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"\\[(\\d{1,2})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Channel-Utilization"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"WIFI4"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":5},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\HT Capability\\s*:\\s(\\w)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"WIFI4"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":""},"condition_value":{"@type":"string","@value":"2022-"},"order":{"@type":"integer","@value":0},"converters":[],"configuration":{"grok_pattern":{"@type":"string","@value":"%{TIMESTAMP_ISO8601:Date}"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Real-Date-Channel-Utilization"},"type":{"@type":"string","@value":"GROK"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"MAC"},"condition_value":{"@type":"string","@value":"(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"},"order":{"@type":"integer","@value":1},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"MAC"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"Client_to_AP_Rate"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"[M]\\s*(\\d{1,4})M"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Client_to_AP_Rate"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"SSID"},"condition_value":{"@type":"string","@value":"CONNECTED"},"order":{"@type":"integer","@value":2},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":".*\\s\\[(\\w{2,16}\\s)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"SSID"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"CONNECTED"},"condition_value":{"@type":"string","@value":"\\s(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"},"order":{"@type":"integer","@value":11},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\s\\W\\w{2,9}\\s@\\s\\w{5}]:\\s(AP-STA-CONNECTED)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"CONNECTED"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"Channel"},"condition_value":{"@type":"string","@value":"bandmonCmnDetermineOperatingRegion:"},"order":{"@type":"integer","@value":4},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"\\:\\sChannel\\s(\\d{1,3})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Channel-Number"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"DISCONNECTED"},"condition_value":{"@type":"string","@value":"\\s(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"},"order":{"@type":"integer","@value":10},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\s\\W\\w{2,9}\\s@\\s\\w{5}]:\\s(AP-STA-DISCONNECTED)"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"DISCONNECTED"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"AP_to_Client_Rate"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"\\d\\s*(\\d{1,4})[M]"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"AP-to-Client-Rate"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"RSSI"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"[M]\\s*(-\\d{1,2})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"RSSI"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"SSID"},"condition_value":{"@type":"string","@value":"\\s(@\\w{1,16})\\s"},"order":{"@type":"integer","@value":0},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\s(@\\w{1,16})\\s"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"SSID-with-@"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"SSID"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":0},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"\\s(\\w{2,16})\\s"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"SSID-regular-characters"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"AP_Identification"},"condition_value":{"@type":"string","@value":"^(\\w{1,16})\\s"},"order":{"@type":"integer","@value":0},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"^(\\w{1,16})\\s"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"AP-Identification"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"Channel"},"condition_value":{"@type":"string","@value":"IEEE80211"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"\\s*(\\d{1,3})\\s*\\d{1,4}M"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Channel"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"Adapter"},"condition_value":{"@type":"string","@value":"TX_Bytes_sec"},"order":{"@type":"integer","@value":0},"converters":[],"configuration":{"regex_value":{"@type":"string","@value":"^\\w{2,16}\\s(\\w{3,8})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Adapter"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"RX_Mcast_packets"},"condition_value":{"@type":"string","@value":"RX_Mcast_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"RX_Mcast_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"RX_Mcast_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"RX_Err_packets"},"condition_value":{"@type":"string","@value":"RX_Err_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"RX_Err_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"RX_Err_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"RX_Bytes_sec"},"condition_value":{"@type":"string","@value":"RX_Bytes_sec\\s(\\d{1,12})"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"RX_Bytes_sec\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"RX_Bytes_sec"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"TX_Err_Packets"},"condition_value":{"@type":"string","@value":"TX_Err_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"TX_Err_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"TX_Err_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"TX_Bytes_sec"},"condition_value":{"@type":"string","@value":"TX_Bytes_sec\\s(\\d{1,12})"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"TX_Bytes_sec\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"TX_Bytes_sec"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"REGEX"}},{"target_field":{"@type":"string","@value":"TX_Drops_packets"},"condition_value":{"@type":"string","@value":"TX_Drops_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"TX_Drops_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"TX_Drops_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"Memory_free"},"condition_value":{"@type":"string","@value":"Memory_free"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"Memory_free\\s(\\d{1,5})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"Memory_free"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"CPU_free"},"condition_value":{"@type":"string","@value":"CPU_free"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"CPU_free\\s(\\d{1,3}.\\d{1,3})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"CPU_free"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"TX_Mcast_packets"},"condition_value":{"@type":"string","@value":"TX_Mcast_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"TX_Mcast_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"TX_Mcast_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"CPU_temperature"},"condition_value":{"@type":"string","@value":"CPU_temperature"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"CPU_temperature\\s(\\d{1,3})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"CPU_temperature"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}},{"target_field":{"@type":"string","@value":"RX_Drops_packets"},"condition_value":{"@type":"string","@value":"RX_Drops_packets"},"order":{"@type":"integer","@value":0},"converters":[{"type":{"@type":"string","@value":"NUMERIC"},"configuration":{}}],"configuration":{"regex_value":{"@type":"string","@value":"RX_Drops_packets\\s(\\d{1,12})"}},"source_field":{"@type":"string","@value":"message"},"title":{"@type":"string","@value":"RX_Drops_packets"},"type":{"@type":"string","@value":"REGEX"},"cursor_strategy":{"@type":"string","@value":"COPY"},"condition_type":{"@type":"string","@value":"STRING"}}]},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]},{"id":"2719ab14-e0ff-4784-ba45-0ed4ec8a5899","type":{"name":"stream","version":"1"},"v":"1","data":{"alarm_callbacks":[],"outputs":[],"remove_matches":{"@type":"boolean","@value":true},"title":{"@type":"string","@value":"Stellar_local"},"stream_rules":[{"type":{"@type":"string","@value":"CONTAINS"},"field":{"@type":"string","@value":"source"},"value":{"@type":"string","@value":"192.168.13."},"inverted":{"@type":"boolean","@value":false},"description":{"@type":"string","@value":""}}],"alert_conditions":[],"matching_type":{"@type":"string","@value":"AND"},"disabled":{"@type":"boolean","@value":false},"description":{"@type":"string","@value":"Stellar-Local"},"default_stream":{"@type":"boolean","@value":false}},"constraints":[{"type":"server-version","version":">=4.3.0+7c09aad"}]}]}
+{
+  "v": "1",
+  "id": "d8d99662-9958-444a-8dda-1bd322129216",
+  "rev": 3,
+  "name": "Stellar APs Quality Control",
+  "summary": "Stellar APs Quality Control",
+  "description": "Added Tx Power monitor",
+  "vendor": "Fernando Rivasplata",
+  "url": "",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "f59eec9a-9b81-4bf3-b849-ebae18db6b38",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": ""
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "cc3978f9-11f1-4656-a955-c65fbea27b42",
+              "timerange": {
+                "type": "relative",
+                "from": 300
+              },
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count(Sig_to_Noise)",
+                      "field": "Sig_to_Noise"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "Sig_to_Noise",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "51157a80-9a09-49a7-83ed-1609142fb12a",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "Sig_to_Noise",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count(SSID)",
+                      "field": "SSID"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "SSID",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "a37f3b2e-5253-404f-bd61-ad2d187807ae",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "avg",
+                      "id": "SNR",
+                      "field": "Client_to_AP_Rate"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "field": "timestamp",
+                      "interval": {
+                        "type": "timeunit",
+                        "timeunit": "1m"
+                      }
+                    },
+                    {
+                      "type": "values",
+                      "field": "Client_to_AP_Rate",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "ea69c83f-e5f9-44fd-bb65-df3f0a19690e",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "max",
+                      "id": "max(Ch_Util)",
+                      "field": "Ch_Util"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": false,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "Channel",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "782b6b23-aed9-46ee-9064-0a0fc0909639",
+                  "column_groups": [
+                    {
+                      "type": "values",
+                      "field": "Ch_Util",
+                      "limit": 15
+                    }
+                  ],
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "max(Ch_Util)",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "avg",
+                      "id": "RSSI",
+                      "field": "RSSI"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "field": "timestamp",
+                      "interval": {
+                        "type": "timeunit",
+                        "timeunit": "1m"
+                      }
+                    },
+                    {
+                      "type": "values",
+                      "field": "RSSI",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "eee6652b-7b63-4291-af1b-d77108da3cf4",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "RSSI:<=-78"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "MAC",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "RSSI",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "125bb9a0-8c4c-48f6-82cb-b1bd99248085",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "RX",
+                      "field": "Client_to_AP_Rate"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "Client_to_AP_Rate",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "8b45c89e-3d31-44da-9b2c-fb4ff17f35be",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "Client_to_AP_Rate",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "MAC",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "WIFI4",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "WIFI5",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "MU",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "41da0d23-1231-4617-8d6b-823a53f49e32",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "MAC",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count(AP_Identification)",
+                      "field": "AP_Identification"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "a1fb5ac9-455a-4303-a947-f9803be1fc1d",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "avg",
+                      "id": "SNR",
+                      "field": "Sig_to_Noise"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "field": "timestamp",
+                      "interval": {
+                        "type": "auto",
+                        "scaling": 1
+                      }
+                    },
+                    {
+                      "type": "values",
+                      "field": "Sig_to_Noise",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "c1d10899-da53-45f7-948c-21b8e8548277",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count(Channel)",
+                      "field": "Channel"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "Channel",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "58b6d046-c8ed-45a6-bf40-1ded08b95384",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "Tx-Data Rate",
+                      "field": "AP_to_Client_Rate"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_to_Client_Rate",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "a8293494-2d57-4819-b08d-bc07e33bfb7f",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_to_Client_Rate",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "avg",
+                      "id": "SNR",
+                      "field": "AP_to_Client_Rate"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "field": "timestamp",
+                      "interval": {
+                        "type": "timeunit",
+                        "timeunit": "1m"
+                      }
+                    },
+                    {
+                      "type": "values",
+                      "field": "AP_to_Client_Rate",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "10a39cba-1f52-45d1-bd76-05e20944852c",
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "field": "timestamp",
+                      "interval": {
+                        "type": "auto",
+                        "scaling": 1
+                      }
+                    },
+                    {
+                      "type": "values",
+                      "field": "MAC",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "RSSI",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "Sig_to_Noise",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "AP_to_Client_Rate",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "Client_to_AP_Rate",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "Channel",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 64
+                    },
+                    {
+                      "type": "values",
+                      "field": "SSID",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "0f7259e7-9ba0-4a54-a681-633bd7582a20",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "timestamp",
+                      "direction": "Descending"
+                    },
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "IEEE80211_MODE*"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "RSSI",
+                      "field": "RSSI"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "RSSI",
+                      "limit": 64
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "0f3cd52f-9d30-49b4-8765-839f45684930",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1b00568b-f177-4a98-819c-6ead320eb1d4",
+              "timerange": {
+                "type": "relative",
+                "from": 300
+              },
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "max",
+                      "id": "(TX-Multicast-packets)",
+                      "field": "TX_Mcast_packets"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(RX-Multicast-packets)",
+                      "field": "RX_Mcast_packets"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "Adapter",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "37bcb315-cacb-4476-acc4-0dc370bf4e49",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "max",
+                      "id": "(TX)",
+                      "field": "TX_Bytes_sec"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(RX)",
+                      "field": "RX_Bytes_sec"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "Adapter",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "57a0216e-64e2-4290-a757-7e535760f779",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "max",
+                      "id": "(TX-Error-packets)",
+                      "field": "TX_Err_Packets"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(RX-Error-packets)",
+                      "field": "RX_Err_packets"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(TX-Drops-packets)",
+                      "field": "TX_Drops_packets"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(RX-Drops-packets)",
+                      "field": "RX_Drops_packets"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 15
+                    },
+                    {
+                      "type": "values",
+                      "field": "Adapter",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "453cb478-0736-4081-a2d5-b45400e3ed44",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": ""
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 300
+                  },
+                  "streams": [
+                    "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                  ],
+                  "series": [
+                    {
+                      "type": "max",
+                      "id": "(CPU-Free-%)",
+                      "field": "CPU_free"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(Memory-Free-Mb))",
+                      "field": "Memory_free"
+                    },
+                    {
+                      "type": "max",
+                      "id": "(CPU-Temp-Celsius)",
+                      "field": "CPU_temperature"
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "field": "AP_Identification",
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "07bfac94-f099-49e9-a078-f4b6a32eccb6",
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "requires": {},
+          "owner": "admin",
+          "created_at": "2022-05-22T00:50:45.838Z"
+        },
+        "created_at": "2022-02-28T17:17:01.125Z",
+        "requires": {},
+        "state": {
+          "cc3978f9-11f1-4656-a955-c65fbea27b42": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "tab": {
+                "title": "Boca Signal by Fernando Rivasplata"
+              },
+              "widget": {
+                "6d64d928-038c-47f5-9942-12aa014d68ab": "Client(s) SNR evolution (dB)",
+                "45149de7-47ce-401f-a57b-d777da321975": "AP(s) to Client(s) Data-Rate (Mbps)",
+                "32a2135c-5af5-4d4c-8823-57bc1f836daa": "Access Points Occupation",
+                "3768fa9b-4196-4eb7-9712-86870bb36e89": "# of Clients",
+                "9988fa75-7d18-4dd3-a8bf-29b24cd93678": "SSID Connections/Disconnections occurrences",
+                "ca63f126-557d-44f2-b3ad-cba33a00b875": "SSID Occupation",
+                "f5bc4e25-2c03-4346-b75b-2b8a7fe3b3c7": "Client(s) RSSI (dBm) (copy)",
+                "0e8e2d46-1067-4cf6-911b-87af59a9919a": "Clients MAC's",
+                "cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6": "Client(s) RSSI evolution (dBm) ",
+                "30f645af-1ec0-433c-9bc3-1f7febf606b1": "Client(s) RSSI (dBm)",
+                "c6d15920-1751-42c3-8f92-199b3330c606": "Channel Occupation (%)",
+                "892ff942-4ff4-45c4-b251-04760d7cfcad": "Quality Status Summary (Green=Excellent, Gray=Good to Acceptable, Red= No good))",
+                "1cd1a94a-503d-4f46-a2ff-c9414aac5af0": "Client(s) SNR (db)",
+                "fa8c2620-4801-412f-9da6-ba8645d539d0": "Channel Utilization  - Airtime utilization (%)",
+                "73780579-2b47-4efb-a05d-855ae4c4245d": "AP to Client Data Rate evolution (Mbps)",
+                "6ec8f66b-0348-4473-9b58-3c339ceea07b": "Client(s) to AP(s) Data-Rate (Mbps)",
+                "2624f4e4-441e-4d16-a539-1eb7d9615cf2": "Poor signal <=-78dBm",
+                "429a4a34-9d2f-4394-a5b1-ba4c280afb5e": "Client(s) list & Capabilities",
+                "9dea7b87-2fad-4f22-b295-93dc3cf7ba38": "Client to AP Data Rate evolution (Mbps) "
+              }
+            },
+            "widgets": [
+              {
+                "id": "6ec8f66b-0348-4473-9b58-3c339ceea07b",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "Client_to_AP_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "RX"
+                      },
+                      "function": "count(Client_to_AP_Rate)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": {
+                    "chart_colors": [
+                      {
+                        "field_name": "1",
+                        "chart_color": "#b71c1c"
+                      },
+                      {
+                        "field_name": "2",
+                        "chart_color": "#b71c1c"
+                      }
+                    ]
+                  },
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "Client_to_AP_Rate",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "9dea7b87-2fad-4f22-b295-93dc3cf7ba38",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "line",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "timestamp",
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "timeunit",
+                          "value": 1,
+                          "unit": "minutes"
+                        }
+                      }
+                    },
+                    {
+                      "field": "Client_to_AP_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "SNR"
+                      },
+                      "function": "avg(Client_to_AP_Rate)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "line",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "timestamp",
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "timeunit",
+                          "value": 1,
+                          "unit": "minutes"
+                        }
+                      }
+                    },
+                    {
+                      "field": "RSSI",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "RSSI"
+                      },
+                      "function": "avg(RSSI)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "2624f4e4-441e-4d16-a539-1eb7d9615cf2",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "RSSI:<=-78"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "MAC",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "RSSI",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "45149de7-47ce-401f-a57b-d777da321975",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_to_Client_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "Tx-Data Rate"
+                      },
+                      "function": "count(AP_to_Client_Rate)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": {
+                    "chart_colors": [
+                      {
+                        "field_name": "864",
+                        "chart_color": "#006064"
+                      }
+                    ]
+                  },
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_to_Client_Rate",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "32a2135c-5af5-4d4c-8823-57bc1f836daa",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count(AP_Identification)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "892ff942-4ff4-45c4-b251-04760d7cfcad",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "timestamp",
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "auto",
+                          "scaling": 1
+                        }
+                      }
+                    },
+                    {
+                      "field": "MAC",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "RSSI",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "Sig_to_Noise",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "AP_to_Client_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "Client_to_AP_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "Channel",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "SSID",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "timestamp",
+                      "direction": "Descending"
+                    },
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "429a4a34-9d2f-4394-a5b1-ba4c280afb5e",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "table",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "MAC",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "WIFI4",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "WIFI5",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    },
+                    {
+                      "field": "MU",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "MAC",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "73780579-2b47-4efb-a05d-855ae4c4245d",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "line",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "timestamp",
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "timeunit",
+                          "value": 1,
+                          "unit": "minutes"
+                        }
+                      }
+                    },
+                    {
+                      "field": "AP_to_Client_Rate",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "SNR"
+                      },
+                      "function": "avg(AP_to_Client_Rate)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "ca63f126-557d-44f2-b3ad-cba33a00b875",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "SSID",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count(SSID)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "30f645af-1ec0-433c-9bc3-1f7febf606b1",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "RSSI",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "RSSI"
+                      },
+                      "function": "count(RSSI)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "RSSI",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "1cd1a94a-503d-4f46-a2ff-c9414aac5af0",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "Sig_to_Noise",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count(Sig_to_Noise)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "Sig_to_Noise",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "c6d15920-1751-42c3-8f92-199b3330c606",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "pie",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "Channel",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count(Channel)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "6d64d928-038c-47f5-9942-12aa014d68ab",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "IEEE80211_MODE*"
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "line",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "timestamp",
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "auto",
+                          "scaling": 1
+                        }
+                      }
+                    },
+                    {
+                      "field": "Sig_to_Noise",
+                      "type": "values",
+                      "config": {
+                        "limit": 64
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "SNR"
+                      },
+                      "function": "avg(Sig_to_Noise)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "fa8c2620-4801-412f-9da6-ba8645d539d0",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "bar",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "Channel",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "max(Ch_Util)"
+                    }
+                  ],
+                  "rollup": false,
+                  "column_pivots": [
+                    {
+                      "field": "Ch_Util",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "visualization_config": {
+                    "barmode": "overlay"
+                  },
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "max(Ch_Util)",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              }
+            ],
+            "widget_mapping": {
+              "6d64d928-038c-47f5-9942-12aa014d68ab": [
+                "c1d10899-da53-45f7-948c-21b8e8548277"
+              ],
+              "45149de7-47ce-401f-a57b-d777da321975": [
+                "a8293494-2d57-4819-b08d-bc07e33bfb7f"
+              ],
+              "32a2135c-5af5-4d4c-8823-57bc1f836daa": [
+                "a1fb5ac9-455a-4303-a947-f9803be1fc1d"
+              ],
+              "ca63f126-557d-44f2-b3ad-cba33a00b875": [
+                "a37f3b2e-5253-404f-bd61-ad2d187807ae"
+              ],
+              "cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6": [
+                "eee6652b-7b63-4291-af1b-d77108da3cf4"
+              ],
+              "30f645af-1ec0-433c-9bc3-1f7febf606b1": [
+                "0f3cd52f-9d30-49b4-8765-839f45684930"
+              ],
+              "c6d15920-1751-42c3-8f92-199b3330c606": [
+                "58b6d046-c8ed-45a6-bf40-1ded08b95384"
+              ],
+              "892ff942-4ff4-45c4-b251-04760d7cfcad": [
+                "0f7259e7-9ba0-4a54-a681-633bd7582a20"
+              ],
+              "1cd1a94a-503d-4f46-a2ff-c9414aac5af0": [
+                "51157a80-9a09-49a7-83ed-1609142fb12a"
+              ],
+              "fa8c2620-4801-412f-9da6-ba8645d539d0": [
+                "782b6b23-aed9-46ee-9064-0a0fc0909639"
+              ],
+              "73780579-2b47-4efb-a05d-855ae4c4245d": [
+                "10a39cba-1f52-45d1-bd76-05e20944852c"
+              ],
+              "6ec8f66b-0348-4473-9b58-3c339ceea07b": [
+                "8b45c89e-3d31-44da-9b2c-fb4ff17f35be"
+              ],
+              "2624f4e4-441e-4d16-a539-1eb7d9615cf2": [
+                "125bb9a0-8c4c-48f6-82cb-b1bd99248085"
+              ],
+              "429a4a34-9d2f-4394-a5b1-ba4c280afb5e": [
+                "41da0d23-1231-4617-8d6b-823a53f49e32"
+              ],
+              "9dea7b87-2fad-4f22-b295-93dc3cf7ba38": [
+                "ea69c83f-e5f9-44fd-bb65-df3f0a19690e"
+              ]
+            },
+            "positions": {
+              "6d64d928-038c-47f5-9942-12aa014d68ab": {
+                "col": 9,
+                "row": 8,
+                "height": 4,
+                "width": 4
+              },
+              "45149de7-47ce-401f-a57b-d777da321975": {
+                "col": 5,
+                "row": 12,
+                "height": 4,
+                "width": 4
+              },
+              "32a2135c-5af5-4d4c-8823-57bc1f836daa": {
+                "col": 7,
+                "row": 20,
+                "height": 4,
+                "width": 3
+              },
+              "ca63f126-557d-44f2-b3ad-cba33a00b875": {
+                "col": 10,
+                "row": 20,
+                "height": 4,
+                "width": 3
+              },
+              "cb080f5b-bd8c-4a3f-bb77-5eb2aeda64f6": {
+                "col": 9,
+                "row": 4,
+                "height": 4,
+                "width": 4
+              },
+              "30f645af-1ec0-433c-9bc3-1f7febf606b1": {
+                "col": 5,
+                "row": 4,
+                "height": 4,
+                "width": 4
+              },
+              "c6d15920-1751-42c3-8f92-199b3330c606": {
+                "col": 1,
+                "row": 20,
+                "height": 4,
+                "width": 3
+              },
+              "892ff942-4ff4-45c4-b251-04760d7cfcad": {
+                "col": 1,
+                "row": 2,
+                "height": 2,
+                "width": 9
+              },
+              "1cd1a94a-503d-4f46-a2ff-c9414aac5af0": {
+                "col": 5,
+                "row": 8,
+                "height": 4,
+                "width": 4
+              },
+              "fa8c2620-4801-412f-9da6-ba8645d539d0": {
+                "col": 4,
+                "row": 20,
+                "height": 4,
+                "width": 3
+              },
+              "73780579-2b47-4efb-a05d-855ae4c4245d": {
+                "col": 9,
+                "row": 12,
+                "height": 4,
+                "width": 4
+              },
+              "6ec8f66b-0348-4473-9b58-3c339ceea07b": {
+                "col": 5,
+                "row": 16,
+                "height": 4,
+                "width": 4
+              },
+              "2624f4e4-441e-4d16-a539-1eb7d9615cf2": {
+                "col": 10,
+                "row": 2,
+                "height": 2,
+                "width": 3
+              },
+              "429a4a34-9d2f-4394-a5b1-ba4c280afb5e": {
+                "col": 1,
+                "row": 4,
+                "height": 16,
+                "width": 4
+              },
+              "9dea7b87-2fad-4f22-b295-93dc3cf7ba38": {
+                "col": 9,
+                "row": 16,
+                "height": 4,
+                "width": 4
+              }
+            },
+            "formatting": {
+              "highlighting": [
+                {
+                  "field": "Client_to_AP_Rate",
+                  "value": "144",
+                  "color": {
+                    "color": "#7beeab",
+                    "type": "static"
+                  },
+                  "condition": "greater"
+                },
+                {
+                  "field": "RSSI",
+                  "value": "-75",
+                  "color": {
+                    "color": "#ff0000",
+                    "type": "static"
+                  },
+                  "condition": "less"
+                },
+                {
+                  "field": "Sig_to_Noise",
+                  "value": "30",
+                  "color": {
+                    "color": "#7beeab",
+                    "type": "static"
+                  },
+                  "condition": "greater_equal"
+                },
+                {
+                  "field": "Sig_to_Noise",
+                  "value": "20",
+                  "color": {
+                    "color": "#ff006c",
+                    "type": "static"
+                  },
+                  "condition": "less"
+                },
+                {
+                  "field": "AP_to_Client_Rate",
+                  "value": "12",
+                  "color": {
+                    "color": "#ff0000",
+                    "type": "static"
+                  },
+                  "condition": "less_equal"
+                },
+                {
+                  "field": "RSSI",
+                  "value": "-60",
+                  "color": {
+                    "color": "#7beeab",
+                    "type": "static"
+                  },
+                  "condition": "greater"
+                },
+                {
+                  "field": "Client_to_AP_Rate",
+                  "value": "6",
+                  "color": {
+                    "color": "#ff0000",
+                    "type": "static"
+                  },
+                  "condition": "less"
+                },
+                {
+                  "field": "Ch_Util",
+                  "value": "70",
+                  "color": {
+                    "color": "#ff0000",
+                    "type": "static"
+                  },
+                  "condition": "greater_equal"
+                },
+                {
+                  "field": "AP_to_Client_Rate",
+                  "value": "220",
+                  "color": {
+                    "color": "#7beeab",
+                    "type": "static"
+                  },
+                  "condition": "greater_equal"
+                },
+                {
+                  "field": "Sig_to_Noise",
+                  "value": "19",
+                  "color": {
+                    "color": "#ff0000",
+                    "type": "static"
+                  },
+                  "condition": "less_equal"
+                }
+              ]
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          },
+          "1b00568b-f177-4a98-819c-6ead320eb1d4": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "widget": {
+                "c9e1cf7b-f028-4979-b5a5-a1e633848555": "AP Utilization (TX/RX) by Bps - Bytes per second",
+                "e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d": "AP TX/RX Errors/Drops - (pps - Packets per second) ",
+                "961fc773-934a-4b5e-8a5d-d10e8176409a": "AP Multicast TX/RX utilization by pps - Packets per second",
+                "undefined": "AP TX/RX Drops (pps - Packets per second) ",
+                "ce1d6e24-b33e-4da8-a969-326bf74d284a": "CPU available in % and Memory Available in Mb"
+              },
+              "tab": {
+                "title": "AP Utilization, Multicast & Errors"
+              }
+            },
+            "widgets": [
+              {
+                "id": "ce1d6e24-b33e-4da8-a969-326bf74d284a",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "bar",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "(CPU-Free-%)"
+                      },
+                      "function": "max(CPU_free)"
+                    },
+                    {
+                      "config": {
+                        "name": "(Memory-Free-Mb))"
+                      },
+                      "function": "max(Memory_free)"
+                    },
+                    {
+                      "config": {
+                        "name": "(CPU-Temp-Celsius)"
+                      },
+                      "function": "max(CPU_temperature)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "barmode": "stack"
+                  },
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "bar",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "Adapter",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "(TX-Error-packets)"
+                      },
+                      "function": "max(TX_Err_Packets)"
+                    },
+                    {
+                      "config": {
+                        "name": "(RX-Error-packets)"
+                      },
+                      "function": "max(RX_Err_packets)"
+                    },
+                    {
+                      "config": {
+                        "name": "(TX-Drops-packets)"
+                      },
+                      "function": "max(TX_Drops_packets)"
+                    },
+                    {
+                      "config": {
+                        "name": "(RX-Drops-packets)"
+                      },
+                      "function": "max(RX_Drops_packets)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "barmode": "stack"
+                  },
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "c9e1cf7b-f028-4979-b5a5-a1e633848555",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "bar",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "Adapter",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "(TX)"
+                      },
+                      "function": "max(TX_Bytes_sec)"
+                    },
+                    {
+                      "config": {
+                        "name": "(RX)"
+                      },
+                      "function": "max(RX_Bytes_sec)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "barmode": "stack"
+                  },
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "961fc773-934a-4b5e-8a5d-d10e8176409a",
+                "type": "aggregation",
+                "filter": null,
+                "timerange": {
+                  "type": "relative",
+                  "from": 300
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": ""
+                },
+                "streams": [
+                  "2719ab14-e0ff-4784-ba45-0ed4ec8a5899"
+                ],
+                "config": {
+                  "visualization": "bar",
+                  "event_annotation": false,
+                  "row_pivots": [
+                    {
+                      "field": "AP_Identification",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    },
+                    {
+                      "field": "Adapter",
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "(TX-Multicast-packets)"
+                      },
+                      "function": "max(TX_Mcast_packets)"
+                    },
+                    {
+                      "config": {
+                        "name": "(RX-Multicast-packets)"
+                      },
+                      "function": "max(RX_Mcast_packets)"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "barmode": "stack"
+                  },
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "AP_Identification",
+                      "direction": "Ascending"
+                    }
+                  ]
+                }
+              }
+            ],
+            "widget_mapping": {
+              "e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d": [
+                "453cb478-0736-4081-a2d5-b45400e3ed44"
+              ],
+              "ce1d6e24-b33e-4da8-a969-326bf74d284a": [
+                "07bfac94-f099-49e9-a078-f4b6a32eccb6"
+              ],
+              "961fc773-934a-4b5e-8a5d-d10e8176409a": [
+                "37bcb315-cacb-4476-acc4-0dc370bf4e49"
+              ],
+              "c9e1cf7b-f028-4979-b5a5-a1e633848555": [
+                "57a0216e-64e2-4290-a757-7e535760f779"
+              ]
+            },
+            "positions": {
+              "c9e1cf7b-f028-4979-b5a5-a1e633848555": {
+                "col": 1,
+                "row": 10,
+                "height": 3,
+                "width": 6
+              },
+              "e9e80c22-76bd-4f9e-81b7-fbba7b5a0d0d": {
+                "col": 1,
+                "row": 13,
+                "height": 3,
+                "width": 6
+              },
+              "ce1d6e24-b33e-4da8-a969-326bf74d284a": {
+                "col": 7,
+                "row": 13,
+                "height": 3,
+                "width": 6
+              },
+              "961fc773-934a-4b5e-8a5d-d10e8176409a": {
+                "col": 7,
+                "row": 10,
+                "height": 3,
+                "width": 6
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "owner": "admin",
+        "title": {
+          "@type": "string",
+          "@value": "Stellar Signal Boca Raton"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": ""
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "7e0f6331-e529-4c90-8593-c20040c2cd96",
+      "data": {
+        "name": "TIMESTAMP_ISO8601",
+        "pattern": "%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "9735050f-b635-4fb4-b295-8bf2c441e918",
+      "data": {
+        "name": "YEAR",
+        "pattern": "(?>\\d\\d){1,2}"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "c161c1cc-3beb-48aa-a6ca-e70d2640cf4c",
+      "data": {
+        "name": "MONTHNUM",
+        "pattern": "(?:0?[1-9]|1[0-2])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "a47337d7-ed96-46be-b162-758f4683e8eb",
+      "data": {
+        "name": "HOUR",
+        "pattern": "(?:2[0123]|[01]?[0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "8c7ee9a7-e951-4268-8c66-ef0026a99977",
+      "data": {
+        "name": "MINUTE",
+        "pattern": "(?:[0-5][0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "504ed537-4583-4b68-b2c2-e2febc49d98d",
+      "data": {
+        "name": "SECOND",
+        "pattern": "(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "4c02843c-1f09-470b-b2ad-842be278b306",
+      "data": {
+        "name": "ISO8601_TIMEZONE",
+        "pattern": "(?:Z|[+-]%{HOUR}(?::?%{MINUTE}))"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "38150950-9b62-4e46-bd0e-42c69378f3eb",
+      "data": {
+        "name": "MONTHDAY",
+        "pattern": "(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "82a14a74-0a04-4c55-9c6f-a6a428f7b2c2",
+      "data": {
+        "name": "TIMESTAMP_ISO8601",
+        "pattern": "%{YEAR}-%{MONTHNUM}-%{MONTHDAY}[T ]%{HOUR}:?%{MINUTE}(?::?%{SECOND})?%{ISO8601_TIMEZONE}?"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "40e4c4b8-7024-43a3-bf0a-f67758e2339b",
+      "data": {
+        "name": "YEAR",
+        "pattern": "(?>\\d\\d){1,2}"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "a289c5f6-cdae-49a6-997f-f84dd30bf61c",
+      "data": {
+        "name": "MONTHNUM",
+        "pattern": "(?:0?[1-9]|1[0-2])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "7c15bf92-cb04-4f11-8b00-69e26216c053",
+      "data": {
+        "name": "HOUR",
+        "pattern": "(?:2[0123]|[01]?[0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "ccfecb3a-8337-417a-977a-a83838aa77b6",
+      "data": {
+        "name": "MINUTE",
+        "pattern": "(?:[0-5][0-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "23f742c1-6e0b-470f-8715-dbf66595ce2e",
+      "data": {
+        "name": "SECOND",
+        "pattern": "(?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "fa200193-376c-4847-9c39-b88e11fb4ca3",
+      "data": {
+        "name": "ISO8601_TIMEZONE",
+        "pattern": "(?:Z|[+-]%{HOUR}(?::?%{MINUTE}))"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "grok_pattern",
+        "version": "1"
+      },
+      "id": "248c64bf-8456-444d-9ff5-7daac321eabb",
+      "data": {
+        "name": "MONTHDAY",
+        "pattern": "(?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])"
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "d50be85f-f285-4393-b03e-8b5883c4fed6",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Stellar_local"
+        },
+        "configuration": {
+          "tls_key_file": {
+            "@type": "string",
+            "@value": ""
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 5555
+          },
+          "tls_enable": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "use_null_delimiter": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "recv_buffer_size": {
+            "@type": "integer",
+            "@value": 1048576
+          },
+          "tcp_keepalive": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "tls_client_auth_cert_file": {
+            "@type": "string",
+            "@value": ""
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "tls_cert_file": {
+            "@type": "string",
+            "@value": ""
+          },
+          "max_message_size": {
+            "@type": "integer",
+            "@value": 2097152
+          },
+          "tls_client_auth": {
+            "@type": "string",
+            "@value": "disabled"
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 4
+          },
+          "tls_key_password": {
+            "@type": "string",
+            "@value": ""
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.raw.tcp.RawTCPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "extractors": [
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Sig_to_Noise"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 8
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\sSNR\\s*:\\s(\\d\\d)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Signal-to-Noise"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "MU"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 7
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\sMU capable\\s*:\\s(\\w)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Multi-User"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "WIFI5"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 6
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "[V]\\w\\w\\sCapability\\s*:\\s(\\w)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "WIFI5"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Ch_Util"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "bandmonCmnDetermineOperatingRegion:"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 9
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\[(\\d{1,2})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Channel-Utilization"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "WIFI4"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 5
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\HT Capability\\s*:\\s(\\w)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "WIFI4"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "2022-"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "grok_pattern": {
+                "@type": "string",
+                "@value": "%{TIMESTAMP_ISO8601:Date}"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Real-Date-Channel-Utilization"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "GROK"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "MAC"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 1
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "MAC"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Client_to_AP_Rate"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "[M]\\s*(\\d{1,4})M"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Client_to_AP_Rate"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "SSID"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "CONNECTED"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 2
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": ".*\\s\\[(\\w{2,16}\\s)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SSID"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "CONNECTED"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "\\s(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 11
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\s\\W\\w{2,9}\\s@\\s\\w{5}]:\\s(AP-STA-CONNECTED)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "CONNECTED"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Channel"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "bandmonCmnDetermineOperatingRegion:"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 4
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\:\\sChannel\\s(\\d{1,3})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Channel-Number"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "DISCONNECTED"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "\\s(\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w)"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 10
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\s\\W\\w{2,9}\\s@\\s\\w{5}]:\\s(AP-STA-DISCONNECTED)"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "DISCONNECTED"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "AP_to_Client_Rate"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\d\\s*(\\d{1,4})[M]"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "AP-to-Client-Rate"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "RSSI"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "[M]\\s*(-\\d{1,2})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "RSSI"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "SSID"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "\\s(@\\w{1,16})\\s"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\s(@\\w{1,16})\\s"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SSID-with-@"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "SSID"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\s(\\w{2,16})\\s"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "SSID-regular-characters"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "AP_Identification"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "^(\\w{1,16})\\s"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^(\\w{1,16})\\s"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "AP-Identification"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Channel"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "IEEE80211"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "\\s*(\\d{1,3})\\s*\\d{1,4}M"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Channel"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Adapter"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "TX_Bytes_sec"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "^\\w{2,16}\\s(\\w{3,8})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Adapter"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "RX_Mcast_packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "RX_Mcast_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "RX_Mcast_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "RX_Mcast_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "RX_Err_packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "RX_Err_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "RX_Err_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "RX_Err_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "RX_Bytes_sec"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "RX_Bytes_sec\\s(\\d{1,12})"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "RX_Bytes_sec\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "RX_Bytes_sec"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "TX_Err_Packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "TX_Err_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "TX_Err_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "TX_Err_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "TX_Bytes_sec"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "TX_Bytes_sec\\s(\\d{1,12})"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "TX_Bytes_sec\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "TX_Bytes_sec"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "REGEX"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "TX_Drops_packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "TX_Drops_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "TX_Drops_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "TX_Drops_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "Memory_free"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "Memory_free"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "Memory_free\\s(\\d{1,5})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "Memory_free"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "CPU_free"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "CPU_free"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "CPU_free\\s(\\d{1,3}.\\d{1,3})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "CPU_free"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "TX_Mcast_packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "TX_Mcast_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "TX_Mcast_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "TX_Mcast_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "CPU_temperature"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "CPU_temperature"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "CPU_temperature\\s(\\d{1,3})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "CPU_temperature"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          },
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": "RX_Drops_packets"
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": "RX_Drops_packets"
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [
+              {
+                "type": {
+                  "@type": "string",
+                  "@value": "NUMERIC"
+                },
+                "configuration": {}
+              }
+            ],
+            "configuration": {
+              "regex_value": {
+                "@type": "string",
+                "@value": "RX_Drops_packets\\s(\\d{1,12})"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "RX_Drops_packets"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "REGEX"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "STRING"
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "stream",
+        "version": "1"
+      },
+      "id": "2719ab14-e0ff-4784-ba45-0ed4ec8a5899",
+      "data": {
+        "alarm_callbacks": [],
+        "outputs": [],
+        "remove_matches": {
+          "@type": "boolean",
+          "@value": true
+        },
+        "title": {
+          "@type": "string",
+          "@value": "Stellar_local"
+        },
+        "stream_rules": [
+          {
+            "type": {
+              "@type": "string",
+              "@value": "CONTAINS"
+            },
+            "field": {
+              "@type": "string",
+              "@value": "source"
+            },
+            "value": {
+              "@type": "string",
+              "@value": "192.168.13."
+            },
+            "inverted": {
+              "@type": "boolean",
+              "@value": false
+            },
+            "description": {
+              "@type": "string",
+              "@value": ""
+            }
+          }
+        ],
+        "alert_conditions": [],
+        "matching_type": {
+          "@type": "string",
+          "@value": "AND"
+        },
+        "disabled": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Stellar-Local"
+        },
+        "default_stream": {
+          "@type": "boolean",
+          "@value": false
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=4.3.0+7c09aad"
+        }
+      ]
+    }
+  ]
+}
