@@ -21,8 +21,8 @@ Pre-Requisites:
 
 Installation process
 1-Install a graylog server 
-2-Upload the Stellar Quality Control - Content pack into the Graylog server and install it, this will create everything neede din Graylog to receive and format the data coming form the Stellar AP's.
-3-Connect to the Stellar AP you wanted to monitor and run the quality-control-configuration.sh script, answer the questions included in the script, the port where Graylog is listening by running the content pack is the port 5555 but you can change that editing the RAW TCP input created by default when running the content pack.
+2-Upload the Stellar Quality Control - Content pack into the Graylog server and install it, this will create everything needed in Graylog to receive and format the data coming form the Stellar AP's.
+3-Transfer the quality-control-configuration.sh script to the Stellar AP you wanted to monitor and run the script (you must connect as root), make this script executable with the command "chmod +x quality-control-configuration.sh", then answer the questions included in the script, the port where Graylog is listening by running the content pack is the port 5555 but you can change that editing the RAW TCP input created by default when running the content pack.
 4-Check the data is properly arriving into the Graylog Server and the data is properly showed in the Stellar_local stream, after that you will start to see the Dashboard populated with very useful information.
 
 enjoy
