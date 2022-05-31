@@ -13,7 +13,7 @@ This project integrates Stellar APs from Alcatel-Lucent Enterprise working in an
 -AP CPU and Memory available
 -AP CPU temperature in Celsius centigrades
 
-All this information doesn't requires any Omnivista server but requires a Graylog server (Graylog + elasticsearch + mongo DB), to install a Graylog server please refer to https://graylog.org or to download a virtual machine go to https://packages.graylog2.org/appliances/ova and pick the release you wanted.
+All this information doesn't requires any Omnivista server but requires a Graylog server (Graylog + elasticsearch + mongo DB), to install a Graylog server using Dockers please refer to https://docs.graylog.org/docs/docker or using a VM please download a virtual machine from here https://packages.graylog2.org/appliances/ova and pick the release you wanted.
 
 Pre-Requisites:
 1- have the Stellar root password
