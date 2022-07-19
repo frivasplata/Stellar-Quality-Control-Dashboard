@@ -50,6 +50,18 @@ read ssid3
 echo "wlanconfig ath03 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 "/g' | nc" $server $port >> signal-to-graylog.sh
 echo "wlanconfig ath13 list | grep '65535\|SNR\|Capability\|capable'" "| awk '{ printf \"%s\""", \$0; if (NR % 5 == 0) print \"\"""; else printf \" \" }' | sed 's/^/"$ap_name $ssid1 "/g' | nc" $server $port >> signal-to-graylog.sh
 }
+function ap_details() {
+#populating the speed.sh with the AP details
+echo 'ch_2g=$(iwlist ath01 channel | grep Current |' "awk '{printf \$5}' | sed" "'s/)//g') " >> speed.sh
+echo 'ch_5g=$(iwlist ath11 channel | grep Current |' "awk '{printf \$5}'| sed" "'s/)//g') " >> speed.sh
+echo 'util_2g=$(iwpriv ath01 get_chutil |' "awk '{printf \$2}' | sed" "'s/get_chutil://g') " >> speed.sh
+echo 'util_5g=$(iwpriv ath11 get_chutil |' "awk '{printf \$2}' | sed" "'s/get_chutil://g') " >> speed.sh
+echo 'ver=$(showver)' >> speed.sh
+echo 'tx_power2g=$(iwlist ath01 txpower | grep Current |' "awk '{printf \$2}' | sed 's/Tx-Power=//g') " >> speed.sh
+echo 'tx_power5g=$(iwlist ath11 txpower | grep Current |' "awk '{printf \$2}' | sed 's/Tx-Power=//g') " >> speed.sh
+echo 'echo' $ap_name "Channel" "\$ch_2g" "Utilization" "\$util_2g" "Version" "\$ver" Tx_Power "\$tx_power2g" "| nc" $server $port >> speed.sh
+echo 'echo' $ap_name "Channel" "\$ch_5g" "Utilization" "\$util_5g" "Version" "\$ver" Tx_Power "\$tx_power5g" "| nc" $server $port >> speed.sh
+}
 function port_monitor() {
 echo "Adding the commands into the speed.sh to monitor the port statistics"
 echo 'rx1=$(cat /proc/net/dev |grep -w' $adapter "| grep -v '-' | cut -f2 -d""':'" "|awk '{print "\$1"}')" >> speed.sh
@@ -107,6 +119,7 @@ read port
 echo ""
 port_monitor
 cpu_monitor
+ap_details
 echo making executable the speed.sh script
 chmod +x speed.sh
 echo ""
@@ -147,7 +160,7 @@ else
 	echo "finishing the script"
 fi
 #Creating the signal-to-graylog.sh script
-echo 'cat /tmp/log/lbd.log | grep bandmonCmnDetermineOperatingRegion | tail -2 | sed' "'s/^/"$ap_name "/g' | nc" $server $port >> signal-to-graylog.sh
+#echo 'cat /tmp/log/lbd.log | grep bandmonCmnDetermineOperatingRegion | tail -2 | sed' "'s/^/"$ap_name "/g' | nc" $server $port >> signal-to-graylog.sh
 chmod +x signal-to-graylog.sh
 
 echo adding the speed.sh to the crontab
