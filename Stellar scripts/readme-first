@@ -1,1 +1,0 @@
-run the scripts on the Stellar APs, use the WIFI5 and WiFI6 versions based on the AP model you are working on. To run these scripts you must connect as root, then copy the script and make it executable with the command chmod +x name-of-the-script
